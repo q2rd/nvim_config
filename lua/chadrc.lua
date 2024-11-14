@@ -7,7 +7,7 @@ local M = {}
 
 M.base46 = {
   theme = "catppuccin",
-  transparency = false,
+  transparency = true,
   statusline = {
     theme = "vscode_colored",
   },
