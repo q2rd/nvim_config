@@ -61,11 +61,10 @@ return {
         "vimdoc",
         "html",
         "css",
-        "typescript",
-        "javascript",
         "go",
         "python",
       },
+      gi,
     },
   },
   {
@@ -243,5 +242,24 @@ return {
       require("dap-python").setup "~/.virtualenvs/debugpy/bin/python"
     end,
     dependencies = { "mfussenegger/nvim-dap" },
+  },
+  {
+    "nvim-tree/nvim-tree.lua",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons", -- Для красивых иконок
+    },
+    opts = {
+      git = {
+        enable = true, -- Использовать Git для файлового менеджера
+        ignore = false, -- Отключить игнорирование файлов по правилам .gitignore
+      },
+      filters = {
+        dotfiles = false, -- Показывать скрытые файлы (начинающиеся с ".")
+      },
+      view = {
+        side = "left", -- Размещение файлового менеджера (слева)
+        width = 30, -- Ширина файлового менеджера
+      },
+    },
   },
 }

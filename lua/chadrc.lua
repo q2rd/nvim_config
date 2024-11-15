@@ -34,5 +34,20 @@ M.base46 = {
   -- 	["@comment"] = { italic = true },
   -- },
 }
+local nvim_tree = require "nvim-tree"
+
+nvim_tree.setup {
+  git = {
+    enable = true, -- Использовать Git для файлового менеджера
+    ignore = false, -- Отключить игнорирование файлов по правилам .gitignore
+  },
+  filters = {
+    dotfiles = false, -- Показывать скрытые файлы
+  },
+  view = {
+    side = "left", -- Размещение файлового менеджера (слева)
+    width = 30, -- Ширина файлового менеджера
+  },
+}
 
 return M
