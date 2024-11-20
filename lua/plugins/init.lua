@@ -36,8 +36,8 @@ return {
       ensure_installed = {
         "lua-language-server",
         "stylua",
-        "html-lsp",
-        "css-lsp",
+        -- "html-lsp",
+        -- "css-lsp",
         "prettier",
         "eslint-lsp",
         "gopls",
@@ -45,7 +45,8 @@ return {
         "debugpy",
         "black",
         "flake8",
-
+        "dockerls",
+        "yaml-language-server",
         -- "js-debug-adapter",
         -- "typescript-language-server",
       },
@@ -63,8 +64,9 @@ return {
         "css",
         "go",
         "python",
+        "yaml",
+        "dockerfile",
       },
-      gi,
     },
   },
   {
@@ -94,42 +96,6 @@ return {
       require("better_escape").setup()
     end,
   },
-  -- {
-  --   "jackMort/ChatGPT.nvim",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("chatgpt").setup {}
-  --   end,
-  --   dependencies = {
-  --     "MunifTanjim/nui.nvim",
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-telescope/telescope.nvim",
-  --   },
-  -- },
-  -- {
-  --   "nvim-neotest/neotest",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("neotest").setup {
-  --       adapters = {
-  --         require "neotest-jest" {
-  --           jestCommand = "npm test --",
-  --           jestConfigFile = "jest.config.ts",
-  --           env = { CI = true },
-  --           cwd = function(path)
-  --             return vim.fn.getcwd()
-  --           end,
-  --         },
-  --       },
-  --     }
-  --   end,
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-treesitter/nvim-treesitter",
-  --     "antoinemadec/FixCursorHold.nvim",
-  --     "haydenmeade/neotest-jest",
-  --   },
-  -- },
   {
     "mfussenegger/nvim-dap",
     config = function()
@@ -248,18 +214,19 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons", -- Для красивых иконок
     },
-    opts = {
-      git = {
-        enable = true, -- Использовать Git для файлового менеджера
-        ignore = false, -- Отключить игнорирование файлов по правилам .gitignore
-      },
-      filters = {
-        dotfiles = false, -- Показывать скрытые файлы (начинающиеся с ".")
-      },
-      view = {
-        side = "left", -- Размещение файлового менеджера (слева)
-        width = 30, -- Ширина файлового менеджера
-      },
-    },
+    -- opts = {
+    --   git = {
+    --     enable = false, -- Использовать Git для файлового менеджера
+    --     ignore = false, -- Отключить игнорирование файлов по правилам .gitignore
+    --   },
+    --   filters = {
+    --     dotfiles = false, -- Показывать скрытые файлы (начинающиеся с ".")
+    --     custom = { "__pycache__", "*.pyc", "*.pyo" },
+    --   },
+    --   view = {
+    --     side = "left", -- Размещение файлового менеджера (слева)
+    --     width = 30, -- Ширина файлового менеджера
+    --   },
+    -- },
   },
 }

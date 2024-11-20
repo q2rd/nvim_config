@@ -38,11 +38,12 @@ local nvim_tree = require "nvim-tree"
 
 nvim_tree.setup {
   git = {
-    enable = true, -- Использовать Git для файлового менеджера
+    enable = false, -- Использовать Git для файлового менеджера
     ignore = false, -- Отключить игнорирование файлов по правилам .gitignore
   },
   filters = {
     dotfiles = false, -- Показывать скрытые файлы
+    custom = { "__pycache__", "*.pyc", "*.pyo" },
   },
   view = {
     side = "left", -- Размещение файлового менеджера (слева)
