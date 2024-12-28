@@ -4,7 +4,7 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "html", "cssls", "gopls", "dockerls", "yamlls" }
+local servers = { "html", "cssls", "gopls", "dockerls", "yamlls", "jsonls" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -24,6 +24,17 @@ lspconfig.pyright.setup {
   settings = {
     python = {
       pythonPath = vim.fn.getcwd() .. "/venv/bin/python", -- путь до виртуального окружения
+    },
+  },
+}
+lspconfig.jsonls.setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+  settings = {
+    json = {
+      format = { enable = true },
+      schemas = require("schemastore").json.schemas(),
     },
   },
 }

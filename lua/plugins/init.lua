@@ -45,10 +45,12 @@ return {
         "debugpy",
         "black",
         "flake8",
+        "isort",
         "dockerls",
         "yaml-language-server",
         -- "js-debug-adapter",
         -- "typescript-language-server",
+        "json-lsp",
       },
     },
   },
@@ -66,6 +68,8 @@ return {
         "python",
         "yaml",
         "dockerfile",
+        "proto",
+        "json",
       },
     },
   },
@@ -214,19 +218,9 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons", -- Для красивых иконок
     },
-    -- opts = {
-    --   git = {
-    --     enable = false, -- Использовать Git для файлового менеджера
-    --     ignore = false, -- Отключить игнорирование файлов по правилам .gitignore
-    --   },
-    --   filters = {
-    --     dotfiles = false, -- Показывать скрытые файлы (начинающиеся с ".")
-    --     custom = { "__pycache__", "*.pyc", "*.pyo" },
-    --   },
-    --   view = {
-    --     side = "left", -- Размещение файлового менеджера (слева)
-    --     width = 30, -- Ширина файлового менеджера
-    --   },
-    -- },
+  },
+  {
+    "b0o/schemastore.nvim",
+    lazy = true,
   },
 }

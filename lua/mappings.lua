@@ -7,3 +7,6 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jj", "<ESC>")
 map("n", "<leader>lr", ":LspRestart<CR>", { noremap = true, silent = false })
+map("n", "<leader>d", '"_d', { noremap = true, silent = true })
+map("v", "<leader>d", '"_d', { noremap = true, silent = true })
+map("v", '<leader>"', '"_xi""<ESC>P', { noremap = true, silent = true })
