@@ -76,12 +76,6 @@ return {
     end,
   },
   {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-    end,
-  },
-  {
     "windwp/nvim-ts-autotag",
     event = "VeryLazy",
     config = function()
